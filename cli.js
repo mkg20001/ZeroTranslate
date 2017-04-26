@@ -10,7 +10,7 @@ function mod(m) {
 }
 
 if (!fs.existsSync(r)) {
-  die("The specified directory %s does not exist.", r)
+  die("The specified directory %s does not exist.", JSON.stringify(r))
 }
 
 const getRoot = mod("getRoot")
@@ -33,7 +33,7 @@ function die() {
 }
 
 if (!fs.existsSync(root)) {
-  die("The expected languages directory %s does not exist.", root)
+  die("The expected languages directory %s does not exist.", JSON.stringify(root))
 }
 
 function log() {
@@ -46,6 +46,8 @@ function log() {
 }
 
 console.log("")
+
+log("ZeroTranslate v%s", require(__dirname + "/package.json").version)
 
 log("Loading from %s...", root)
 
