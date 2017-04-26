@@ -1,7 +1,7 @@
+#!/usr/bin/env node
+
 const fs = require("fs")
 const path = require("path")
-
-console.log("")
 
 const r = process.argv[2] || process.cwd()
 
@@ -10,7 +10,7 @@ function mod(m) {
 }
 
 if (!fs.existsSync(r)) {
-  throw new Error("ENOTFOUND " + r)
+  die("The specified directory %s does not exist.", r)
 }
 
 const getRoot = mod("getRoot")
@@ -25,9 +25,15 @@ function readJson(file) {
   return jsonfile.readFileSync(path.join(root, file))
 }
 
+function die() {
+  const a = arguments
+  a[0] = "ERROR: " + a[0]
+  console.error.apply(console, a)
+  process.exit(2)
+}
 
 if (!fs.existsSync(root)) {
-  throw new Error("ENOTFOUND " + root)
+  die("The expected languages directory %s does not exist.", root)
 }
 
 function log() {
@@ -38,6 +44,9 @@ function log() {
     a.unshift(" =>")
   console.log.apply(console, a)
 }
+
+console.log("")
+
 log("Loading from %s...", root)
 
 let index
