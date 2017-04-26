@@ -1,6 +1,6 @@
 {
   "name": "zero-translate",
-  "version": "0.0.1",
+  "version": "0.0.1-rc1",
   "description": "Allows you to translate zeronet zites with ease",
   "main": "index.js",
   "scripts": {
@@ -11,11 +11,23 @@
     "translation",
     "languages"
   ],
+  "bin": {
+    "zero-translate": "cli.js"
+  },
   "author": "Maciej Krüger <mkg20001@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
     "colors": "^1.1.2",
     "console.table": "^0.8.0",
     "jsonfile": "^2.4.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkg20001/ZeroTranslate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mkg20001/ZeroTranslate/issues"
+  },
+  "homepage": "https://github.com/mkg20001/ZeroTranslate#readme"
 }
