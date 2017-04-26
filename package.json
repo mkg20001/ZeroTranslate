@@ -1,6 +1,6 @@
 {
   "name": "zero-translate",
-  "version": "0.0.1-rc3",
+  "version": "0.0.1-rc4",
   "description": "Allows you to translate zeronet zites with ease",
   "main": "index.js",
   "scripts": {
